@@ -27,7 +27,6 @@ public protocol CoordinatorType: PresentableCoordinatorType {
 	var router: RouterType { get }
 }
 
-
 open class Coordinator<DeepLinkType>: PresentableCoordinator<DeepLinkType>, CoordinatorType  {
 	
 	public var childCoordinators: [Coordinator<DeepLinkType>] = []

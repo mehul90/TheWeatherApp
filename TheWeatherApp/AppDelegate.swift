@@ -12,10 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    private let config: ConfigType = Config(bundle: .main, locale: .current)
+    lazy var appStore: StoreType = Store(config: self.config)
+    lazy var appNavigationController: UINavigationController = UINavigationController()
+    lazy var appRouter: RouterType = Router(navigationController: self.appNavigationController)
+    lazy var appCoordinator: AppCoordinator = AppCoordinator(router: self.appRouter, store: self.appStore)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = appCoordinator.toPresentable()
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
+        
+        // or get notification from launch options and convert it to a deep link
+        appCoordinator.start()
+        
         return true
     }
 
