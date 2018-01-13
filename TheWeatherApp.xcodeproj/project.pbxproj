@@ -13,6 +13,11 @@
 		17552A742009D8AC00E3EE7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17552A732009D8AC00E3EE7A /* Assets.xcassets */; };
 		17552A772009D8AC00E3EE7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17552A752009D8AC00E3EE7A /* LaunchScreen.storyboard */; };
 		17552A822009D8AC00E3EE7A /* TheWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552A812009D8AC00E3EE7A /* TheWeatherAppTests.swift */; };
+		17552A902009DBC600E3EE7A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552A8D2009DBC600E3EE7A /* Coordinator.swift */; };
+		17552A912009DBC600E3EE7A /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552A8E2009DBC600E3EE7A /* Presentable.swift */; };
+		17552A922009DBC600E3EE7A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552A8F2009DBC600E3EE7A /* Router.swift */; };
+		17552A9A2009DE0D00E3EE7A /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552A982009DE0D00E3EE7A /* Configuration.swift */; };
+		17552A9B2009DE0D00E3EE7A /* ConfigurationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552A992009DE0D00E3EE7A /* ConfigurationType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		17552A7D2009D8AC00E3EE7A /* TheWeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheWeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17552A812009D8AC00E3EE7A /* TheWeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheWeatherAppTests.swift; sourceTree = "<group>"; };
 		17552A832009D8AC00E3EE7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17552A8D2009DBC600E3EE7A /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		17552A8E2009DBC600E3EE7A /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		17552A8F2009DBC600E3EE7A /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		17552A982009DE0D00E3EE7A /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		17552A992009DE0D00E3EE7A /* ConfigurationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				17552A6C2009D8AC00E3EE7A /* AppDelegate.swift */,
+				17552A8C2009DB8A00E3EE7A /* Coordinator */,
+				17552A932009DCCB00E3EE7A /* Modules */,
+				17552A942009DCDD00E3EE7A /* Service */,
+				17552A952009DCE500E3EE7A /* Configuration */,
 				17552A6E2009D8AC00E3EE7A /* ViewController.swift */,
 				17552A702009D8AC00E3EE7A /* Main.storyboard */,
 				17552A732009D8AC00E3EE7A /* Assets.xcassets */,
@@ -94,6 +108,55 @@
 				17552A832009D8AC00E3EE7A /* Info.plist */,
 			);
 			path = TheWeatherAppTests;
+			sourceTree = "<group>";
+		};
+		17552A8C2009DB8A00E3EE7A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				17552A8D2009DBC600E3EE7A /* Coordinator.swift */,
+				17552A8E2009DBC600E3EE7A /* Presentable.swift */,
+				17552A8F2009DBC600E3EE7A /* Router.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		17552A932009DCCB00E3EE7A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				17552A972009DD9400E3EE7A /* Today Forcast */,
+				17552A962009DD8A00E3EE7A /* Weekly Forcast */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		17552A942009DCDD00E3EE7A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		17552A952009DCE500E3EE7A /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				17552A982009DE0D00E3EE7A /* Configuration.swift */,
+				17552A992009DE0D00E3EE7A /* ConfigurationType.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		17552A962009DD8A00E3EE7A /* Weekly Forcast */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Weekly Forcast";
+			sourceTree = "<group>";
+		};
+		17552A972009DD9400E3EE7A /* Today Forcast */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Today Forcast";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +262,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17552A9B2009DE0D00E3EE7A /* ConfigurationType.swift in Sources */,
+				17552A9A2009DE0D00E3EE7A /* Configuration.swift in Sources */,
 				17552A6F2009D8AC00E3EE7A /* ViewController.swift in Sources */,
+				17552A912009DBC600E3EE7A /* Presentable.swift in Sources */,
+				17552A922009DBC600E3EE7A /* Router.swift in Sources */,
 				17552A6D2009D8AC00E3EE7A /* AppDelegate.swift in Sources */,
+				17552A902009DBC600E3EE7A /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

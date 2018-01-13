@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>API Endpoints</key>
+    <dict>
+        <key>Debug</key>
+        <string>https:api.openweathermap.org/data/</string>
+        <key>Release</key>
+        <string>https:api.openweathermap.org/data/</string>
+    </dict>
+    <key>API Key</key>
+    <string>31ebcba6f5fc424379da7e1ed21a2fa9</string>
+    <key>API Version</key>
+    <string>2.5</string>
+    <key>Environment</key>
+    <string>$(CONFIGURATION)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
