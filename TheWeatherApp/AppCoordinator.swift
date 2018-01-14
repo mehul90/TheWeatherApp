@@ -63,6 +63,8 @@ class AppCoordinator: Coordinator<DeepLink>, UITabBarControllerDelegate {
         // Store view controller to coordinator mapping
         let vcs = coordinators.map { coordinator -> UIViewController in
             let viewController = coordinator.toPresentable()
+            viewController.tabBarItem.selectedImage = #imageLiteral(resourceName: "selected")
+            viewController.tabBarItem.image = #imageLiteral(resourceName: "nonSelected")
             tabs[viewController] = coordinator
             return viewController
         }
