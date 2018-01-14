@@ -33,14 +33,27 @@ class AppCoordinator: Coordinator<DeepLink>, UITabBarControllerDelegate {
         return coordinator
     }()
     
+    lazy var userProfileCoordinator: UserProfileCoordinator = {
+        let navigationController = UINavigationController()
+        navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
+        let router = Router(navigationController: navigationController)
+        let coordinator = UserProfileCoordinator(router: router, store: store)
+        return coordinator
+    }()
+    
     private let store: StoreType
     
     init(router: RouterType, store: StoreType) {
         self.store = store
         super.init(router: router)
         router.setRootModule(tabBarController, hideBar: true)
+        self.store.delegate = self
         tabBarController.delegate = self
-        setTabs([todayCoordinator, weeklyCoordinator])
+        if store.isLoggedIn {
+            setTabs([todayCoordinator, weeklyCoordinator, userProfileCoordinator])
+        } else {
+            setTabs([userProfileCoordinator])
+        }
     }
     
     func setTabs(_ coordinators: [Coordinator<DeepLink>], animated: Bool = false) {
@@ -65,5 +78,15 @@ class AppCoordinator: Coordinator<DeepLink>, UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 
+    }
+}
+
+extension AppCoordinator: StoreDelegate {
+    func store(_ store: StoreType, didChangeLogginState isLoggedIn: Bool) {
+        if isLoggedIn {
+            setTabs([todayCoordinator, weeklyCoordinator, userProfileCoordinator])
+        } else {
+            setTabs([userProfileCoordinator])
+        }
     }
 }

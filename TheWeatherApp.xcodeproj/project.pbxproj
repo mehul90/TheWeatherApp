@@ -35,6 +35,11 @@
 		17552ABE200A372000E3EE7A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17552ABD200A372000E3EE7A /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		17552AC1200A37ED00E3EE7A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552AC0200A37ED00E3EE7A /* LocationManager.swift */; };
 		17552AC3200A5D8000E3EE7A /* WeeklyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17552AC2200A5D8000E3EE7A /* WeeklyViewController.xib */; };
+		17552AC6200AF7C800E3EE7A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552AC5200AF7C800E3EE7A /* UserProfileViewController.swift */; };
+		17552AC8200AF7D500E3EE7A /* UserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17552AC7200AF7D500E3EE7A /* UserProfileViewController.xib */; };
+		17552ACA200AF85000E3EE7A /* UserProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552AC9200AF85000E3EE7A /* UserProfileCoordinator.swift */; };
+		17552ACC200AF86300E3EE7A /* UserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552ACB200AF86300E3EE7A /* UserProfilePresenter.swift */; };
+		17552ACE200AF86E00E3EE7A /* UserProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552ACD200AF86E00E3EE7A /* UserProfileInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,11 @@
 		17552ABD200A372000E3EE7A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		17552AC0200A37ED00E3EE7A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		17552AC2200A5D8000E3EE7A /* WeeklyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeklyViewController.xib; sourceTree = "<group>"; };
+		17552AC5200AF7C800E3EE7A /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		17552AC7200AF7D500E3EE7A /* UserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileViewController.xib; sourceTree = "<group>"; };
+		17552AC9200AF85000E3EE7A /* UserProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCoordinator.swift; sourceTree = "<group>"; };
+		17552ACB200AF86300E3EE7A /* UserProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePresenter.swift; sourceTree = "<group>"; };
+		17552ACD200AF86E00E3EE7A /* UserProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +173,7 @@
 			children = (
 				17552A972009DD9400E3EE7A /* Today Forcast */,
 				17552A962009DD8A00E3EE7A /* Weekly Forcast */,
+				17552AC4200AF74F00E3EE7A /* User Profile */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -225,6 +236,18 @@
 				17552AC0200A37ED00E3EE7A /* LocationManager.swift */,
 			);
 			path = "Location Manager";
+			sourceTree = "<group>";
+		};
+		17552AC4200AF74F00E3EE7A /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				17552AC9200AF85000E3EE7A /* UserProfileCoordinator.swift */,
+				17552AC5200AF7C800E3EE7A /* UserProfileViewController.swift */,
+				17552AC7200AF7D500E3EE7A /* UserProfileViewController.xib */,
+				17552ACB200AF86300E3EE7A /* UserProfilePresenter.swift */,
+				17552ACD200AF86E00E3EE7A /* UserProfileInteractor.swift */,
+			);
+			path = "User Profile";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17552AC8200AF7D500E3EE7A /* UserProfileViewController.xib in Resources */,
 				17552A772009D8AC00E3EE7A /* LaunchScreen.storyboard in Resources */,
 				17552AC3200A5D8000E3EE7A /* WeeklyViewController.xib in Resources */,
 				17552A742009D8AC00E3EE7A /* Assets.xcassets in Resources */,
@@ -334,10 +358,13 @@
 				17552A9B2009DE0D00E3EE7A /* ConfigurationType.swift in Sources */,
 				17552AAF2009F59000E3EE7A /* WeeklyPresenter.swift in Sources */,
 				17552A9A2009DE0D00E3EE7A /* Configuration.swift in Sources */,
+				17552ACA200AF85000E3EE7A /* UserProfileCoordinator.swift in Sources */,
 				17552AB9200A10D100E3EE7A /* WeatherServiceResponse.swift in Sources */,
+				17552AC6200AF7C800E3EE7A /* UserProfileViewController.swift in Sources */,
 				17552A6F2009D8AC00E3EE7A /* ViewController.swift in Sources */,
 				17552AAB2009F57500E3EE7A /* WeeklyViewController.swift in Sources */,
 				17552AC1200A37ED00E3EE7A /* LocationManager.swift in Sources */,
+				17552ACE200AF86E00E3EE7A /* UserProfileInteractor.swift in Sources */,
 				17552AA72009F54B00E3EE7A /* TodayPresenter.swift in Sources */,
 				17552A9F2009E57200E3EE7A /* Store.swift in Sources */,
 				17552A912009DBC600E3EE7A /* Presentable.swift in Sources */,
@@ -345,6 +372,7 @@
 				17552AA52009F54000E3EE7A /* TodayViewController.swift in Sources */,
 				17552AA32009F01000E3EE7A /* WeeklyCoordinator.swift in Sources */,
 				17552AB3200A109B00E3EE7A /* WeatherService.swift in Sources */,
+				17552ACC200AF86300E3EE7A /* UserProfilePresenter.swift in Sources */,
 				17552A9D2009E43700E3EE7A /* AppCoordinator.swift in Sources */,
 				17552AB5200A10AA00E3EE7A /* WeatherServiceImplementation.swift in Sources */,
 				17552AA12009F00200E3EE7A /* TodayCoordinator.swift in Sources */,
