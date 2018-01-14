@@ -15,8 +15,8 @@ protocol WeeklyCoordinatorInput {
 final class WeeklyCoordinator: Coordinator<DeepLink> {
     
     lazy var viewController: WeeklyViewController = {
-        
         let controller = WeeklyViewController()
+        controller.title = "Weekly"
         let presenter = WeeklyPresenter()
         presenter.view = controller
         presenter.coordinator = self
@@ -24,10 +24,7 @@ final class WeeklyCoordinator: Coordinator<DeepLink> {
         interactor.output = presenter
         presenter.interactor = interactor
         controller.output = presenter
-        
-        controller.view.backgroundColor = UIColor.green
         return controller
-        
     }()
     
     override func toPresentable() -> UIViewController {

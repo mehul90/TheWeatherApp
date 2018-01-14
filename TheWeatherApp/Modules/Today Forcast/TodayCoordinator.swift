@@ -17,6 +17,7 @@ final class TodayCoordinator: Coordinator<DeepLink> {
     lazy var viewController: TodayViewController = {
         
         let controller = TodayViewController()
+        controller.title = "Today"
         let presenter = TodayPresenter()
         presenter.view = controller
         presenter.coordinator = self
@@ -24,10 +25,7 @@ final class TodayCoordinator: Coordinator<DeepLink> {
         interactor.output = presenter
         presenter.interactor = interactor
         controller.output = presenter
-
-        controller.view.backgroundColor = UIColor.yellow
         return controller
-        
     }()
     
     override func toPresentable() -> UIViewController {

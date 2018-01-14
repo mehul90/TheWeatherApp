@@ -27,6 +27,14 @@
 		17552AAB2009F57500E3EE7A /* WeeklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552AAA2009F57500E3EE7A /* WeeklyViewController.swift */; };
 		17552AAD2009F58300E3EE7A /* WeeklyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552AAC2009F58300E3EE7A /* WeeklyInteractor.swift */; };
 		17552AAF2009F59000E3EE7A /* WeeklyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552AAE2009F59000E3EE7A /* WeeklyPresenter.swift */; };
+		17552AB1200A011C00E3EE7A /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17552AB0200A011C00E3EE7A /* TodayViewController.xib */; };
+		17552AB3200A109B00E3EE7A /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552AB2200A109B00E3EE7A /* WeatherService.swift */; };
+		17552AB5200A10AA00E3EE7A /* WeatherServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552AB4200A10AA00E3EE7A /* WeatherServiceImplementation.swift */; };
+		17552AB9200A10D100E3EE7A /* WeatherServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552AB8200A10D100E3EE7A /* WeatherServiceResponse.swift */; };
+		17552ABB200A10DB00E3EE7A /* WeatherServiceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552ABA200A10DB00E3EE7A /* WeatherServiceBuilder.swift */; };
+		17552ABE200A372000E3EE7A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17552ABD200A372000E3EE7A /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		17552AC1200A37ED00E3EE7A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17552AC0200A37ED00E3EE7A /* LocationManager.swift */; };
+		17552AC3200A5D8000E3EE7A /* WeeklyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17552AC2200A5D8000E3EE7A /* WeeklyViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +72,14 @@
 		17552AAA2009F57500E3EE7A /* WeeklyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyViewController.swift; sourceTree = "<group>"; };
 		17552AAC2009F58300E3EE7A /* WeeklyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyInteractor.swift; sourceTree = "<group>"; };
 		17552AAE2009F59000E3EE7A /* WeeklyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPresenter.swift; sourceTree = "<group>"; };
+		17552AB0200A011C00E3EE7A /* TodayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayViewController.xib; sourceTree = "<group>"; };
+		17552AB2200A109B00E3EE7A /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		17552AB4200A10AA00E3EE7A /* WeatherServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceImplementation.swift; sourceTree = "<group>"; };
+		17552AB8200A10D100E3EE7A /* WeatherServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceResponse.swift; sourceTree = "<group>"; };
+		17552ABA200A10DB00E3EE7A /* WeatherServiceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceBuilder.swift; sourceTree = "<group>"; };
+		17552ABD200A372000E3EE7A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		17552AC0200A37ED00E3EE7A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		17552AC2200A5D8000E3EE7A /* WeeklyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeklyViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17552ABE200A372000E3EE7A /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +107,7 @@
 				17552A6B2009D8AC00E3EE7A /* TheWeatherApp */,
 				17552A802009D8AC00E3EE7A /* TheWeatherAppTests */,
 				17552A6A2009D8AC00E3EE7A /* Products */,
+				17552ABC200A371F00E3EE7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +129,7 @@
 				17552A932009DCCB00E3EE7A /* Modules */,
 				17552A942009DCDD00E3EE7A /* Service */,
 				17552A952009DCE500E3EE7A /* Configuration */,
+				17552ABF200A37B400E3EE7A /* Location Manager */,
 				17552A6E2009D8AC00E3EE7A /* ViewController.swift */,
 				17552A732009D8AC00E3EE7A /* Assets.xcassets */,
 				17552A752009D8AC00E3EE7A /* LaunchScreen.storyboard */,
@@ -151,6 +170,10 @@
 		17552A942009DCDD00E3EE7A /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				17552AB2200A109B00E3EE7A /* WeatherService.swift */,
+				17552ABA200A10DB00E3EE7A /* WeatherServiceBuilder.swift */,
+				17552AB4200A10AA00E3EE7A /* WeatherServiceImplementation.swift */,
+				17552AB8200A10D100E3EE7A /* WeatherServiceResponse.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -169,6 +192,7 @@
 			children = (
 				17552AA22009F01000E3EE7A /* WeeklyCoordinator.swift */,
 				17552AAA2009F57500E3EE7A /* WeeklyViewController.swift */,
+				17552AC2200A5D8000E3EE7A /* WeeklyViewController.xib */,
 				17552AAE2009F59000E3EE7A /* WeeklyPresenter.swift */,
 				17552AAC2009F58300E3EE7A /* WeeklyInteractor.swift */,
 			);
@@ -180,10 +204,27 @@
 			children = (
 				17552AA02009F00200E3EE7A /* TodayCoordinator.swift */,
 				17552AA42009F54000E3EE7A /* TodayViewController.swift */,
+				17552AB0200A011C00E3EE7A /* TodayViewController.xib */,
 				17552AA62009F54B00E3EE7A /* TodayPresenter.swift */,
 				17552AA82009F55700E3EE7A /* TodayInteractor.swift */,
 			);
 			path = "Today Forcast";
+			sourceTree = "<group>";
+		};
+		17552ABC200A371F00E3EE7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17552ABD200A372000E3EE7A /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		17552ABF200A37B400E3EE7A /* Location Manager */ = {
+			isa = PBXGroup;
+			children = (
+				17552AC0200A37ED00E3EE7A /* LocationManager.swift */,
+			);
+			path = "Location Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +311,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				17552A772009D8AC00E3EE7A /* LaunchScreen.storyboard in Resources */,
+				17552AC3200A5D8000E3EE7A /* WeeklyViewController.xib in Resources */,
 				17552A742009D8AC00E3EE7A /* Assets.xcassets in Resources */,
+				17552AB1200A011C00E3EE7A /* TodayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,14 +334,19 @@
 				17552A9B2009DE0D00E3EE7A /* ConfigurationType.swift in Sources */,
 				17552AAF2009F59000E3EE7A /* WeeklyPresenter.swift in Sources */,
 				17552A9A2009DE0D00E3EE7A /* Configuration.swift in Sources */,
+				17552AB9200A10D100E3EE7A /* WeatherServiceResponse.swift in Sources */,
 				17552A6F2009D8AC00E3EE7A /* ViewController.swift in Sources */,
 				17552AAB2009F57500E3EE7A /* WeeklyViewController.swift in Sources */,
+				17552AC1200A37ED00E3EE7A /* LocationManager.swift in Sources */,
 				17552AA72009F54B00E3EE7A /* TodayPresenter.swift in Sources */,
 				17552A9F2009E57200E3EE7A /* Store.swift in Sources */,
 				17552A912009DBC600E3EE7A /* Presentable.swift in Sources */,
+				17552ABB200A10DB00E3EE7A /* WeatherServiceBuilder.swift in Sources */,
 				17552AA52009F54000E3EE7A /* TodayViewController.swift in Sources */,
 				17552AA32009F01000E3EE7A /* WeeklyCoordinator.swift in Sources */,
+				17552AB3200A109B00E3EE7A /* WeatherService.swift in Sources */,
 				17552A9D2009E43700E3EE7A /* AppCoordinator.swift in Sources */,
+				17552AB5200A10AA00E3EE7A /* WeatherServiceImplementation.swift in Sources */,
 				17552AA12009F00200E3EE7A /* TodayCoordinator.swift in Sources */,
 				17552A922009DBC600E3EE7A /* Router.swift in Sources */,
 				17552A6D2009D8AC00E3EE7A /* AppDelegate.swift in Sources */,
