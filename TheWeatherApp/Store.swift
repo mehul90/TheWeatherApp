@@ -10,8 +10,10 @@ import Foundation
 
 protocol StoreType: class {
     var isLoggedIn: Bool { get }
-    var token: String? { get set }
+    var token: String? { get }
+    var userName: String? { get }
     var delegate: StoreDelegate? { get set }
+    func update(userName: String?, token: String?)
 }
 
 protocol StoreDelegate: class {
@@ -28,12 +30,18 @@ protocol StoreDelegate: class {
  */
 class Store: NSObject, StoreType {
     
+    var userName: String?
     weak var delegate: StoreDelegate?
     
     var isLoggedIn: Bool = false {
         didSet {
             delegate?.store(self, didChangeLogginState: isLoggedIn)
         }
+    }
+    
+    func update(userName: String?, token: String?) {
+        self.userName = userName
+        self.token = token
     }
     
     var token: String? {

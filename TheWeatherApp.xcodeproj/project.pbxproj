@@ -96,6 +96,8 @@
 		17552ACB200AF86300E3EE7A /* UserProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePresenter.swift; sourceTree = "<group>"; };
 		17552ACD200AF86E00E3EE7A /* UserProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInteractor.swift; sourceTree = "<group>"; };
 		17F7F2FA200B0EAC00007D92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		17F7F2FD200B11C700007D92 /* TheWeatherApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheWeatherApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		17F7F2FE200B11C700007D92 /* TheWeatherAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheWeatherAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		35CF98AA7614E9A9835B0D6E /* Pods-TheWeatherAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheWeatherAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheWeatherAppTests/Pods-TheWeatherAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		5256873440F531586099EB8F /* Pods-TheWeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheWeatherAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheWeatherAppTests/Pods-TheWeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		794E7A9E86BF78CC2A9997CA /* Pods_TheWeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheWeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,8 @@
 				17552A752009D8AC00E3EE7A /* LaunchScreen.storyboard */,
 				17552A782009D8AC00E3EE7A /* Info.plist */,
 				17552A9E2009E57200E3EE7A /* Store.swift */,
+				17F7F2FD200B11C700007D92 /* TheWeatherApp-Bridging-Header.h */,
+				17F7F2FE200B11C700007D92 /* TheWeatherAppTests-Bridging-Header.h */,
 			);
 			path = TheWeatherApp;
 			sourceTree = "<group>";
@@ -334,10 +338,12 @@
 				TargetAttributes = {
 					17552A682009D8AC00E3EE7A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					17552A7C2009D8AC00E3EE7A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 17552A682009D8AC00E3EE7A;
 					};
@@ -671,12 +677,15 @@
 			baseConfigurationReference = A5505FF4DF4DFF138F767AF0 /* Pods-TheWeatherApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A8R4J5JA38;
 				INFOPLIST_FILE = TheWeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.TheWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheWeatherApp/TheWeatherApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -687,12 +696,14 @@
 			baseConfigurationReference = AD3FB46601D7628B6F7BE0D8 /* Pods-TheWeatherApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A8R4J5JA38;
 				INFOPLIST_FILE = TheWeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.TheWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheWeatherApp/TheWeatherApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -704,12 +715,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A8R4J5JA38;
 				INFOPLIST_FILE = TheWeatherAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.TheWeatherAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheWeatherApp/TheWeatherAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheWeatherApp.app/TheWeatherApp";
@@ -722,12 +736,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A8R4J5JA38;
 				INFOPLIST_FILE = TheWeatherAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.TheWeatherAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheWeatherApp/TheWeatherAppTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheWeatherApp.app/TheWeatherApp";

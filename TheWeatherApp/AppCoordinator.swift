@@ -83,6 +83,7 @@ class AppCoordinator: Coordinator<DeepLink>, UITabBarControllerDelegate {
 
 extension AppCoordinator: StoreDelegate {
     func store(_ store: StoreType, didChangeLogginState isLoggedIn: Bool) {
+        userProfileCoordinator.refreshLoginData()
         if isLoggedIn {
             setTabs([todayCoordinator, weeklyCoordinator, userProfileCoordinator])
         } else {

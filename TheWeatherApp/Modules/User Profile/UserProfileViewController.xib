@@ -12,8 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserProfileViewController" customModule="TheWeatherApp" customModuleProvider="target">
             <connections>
-                <outlet property="guestLoginLogoutButton" destination="KQF-nm-wXp" id="4oY-hL-Jn5"/>
-                <outlet property="userNameLabel" destination="4ci-MW-mzU" id="fN2-Ej-fAc"/>
+                <outlet property="loggedInStack" destination="aw5-xc-XNq" id="z1Z-ci-33G"/>
+                <outlet property="loginStack" destination="oRB-lQ-ZRX" id="RP1-6z-0sD"/>
+                <outlet property="userNameLabel" destination="y1u-v7-NDp" id="MXF-0q-re5"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Rsc-Yr-3e0"/>
             </connections>
         </placeholder>
@@ -22,26 +23,62 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ci-MW-mzU">
-                    <rect key="frame" x="162.5" y="48" width="49" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="100" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ci-MW-mzU">
+                    <rect key="frame" x="162.5" y="48" width="49" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="tTe-ua-Ul8"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQF-nm-wXp">
-                    <rect key="frame" x="164.5" y="100" width="45" height="30"/>
-                    <state key="normal" title="Log-In"/>
-                    <connections>
-                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="gqK-Yq-Xjl"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oRB-lQ-ZRX">
+                    <rect key="frame" x="0.0" y="128" width="375" height="539"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Baf-nf-ZVL" customClass="GIDSignInButton">
+                            <rect key="frame" x="67.5" y="0.0" width="240" height="284.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTz-t1-YSp">
+                            <rect key="frame" x="134.5" y="284.5" width="106" height="254.5"/>
+                            <state key="normal" title="Log in as Guest"/>
+                            <connections>
+                                <action selector="loginAsGuestButtonTapped:" destination="-1" eventType="touchUpInside" id="8kk-WK-afu"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aw5-xc-XNq">
+                    <rect key="frame" x="0.0" y="128" width="375" height="539"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1u-v7-NDp">
+                            <rect key="frame" x="144.5" y="0.0" width="86" height="269.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pT6-Gc-yYS">
+                            <rect key="frame" x="163.5" y="269.5" width="48" height="269.5"/>
+                            <state key="normal" title="Logout"/>
+                            <connections>
+                                <action selector="logoutButtonTapped" destination="-1" eventType="touchUpInside" id="Mw7-gB-XHG"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="4ci-MW-mzU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="28" id="1Nb-tk-Dii"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aw5-xc-XNq" secondAttribute="trailing" id="4Az-Uq-Po5"/>
+                <constraint firstItem="aw5-xc-XNq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4dS-GF-P6o"/>
                 <constraint firstItem="4ci-MW-mzU" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="6lA-Jw-Jwh"/>
-                <constraint firstItem="KQF-nm-wXp" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="CJ7-US-fPi"/>
-                <constraint firstItem="KQF-nm-wXp" firstAttribute="top" secondItem="4ci-MW-mzU" secondAttribute="bottom" constant="31" id="zsI-Xu-fra"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="oRB-lQ-ZRX" secondAttribute="bottom" id="9s5-NG-gsO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="aw5-xc-XNq" secondAttribute="bottom" id="L75-a6-MtK"/>
+                <constraint firstItem="oRB-lQ-ZRX" firstAttribute="top" secondItem="4ci-MW-mzU" secondAttribute="bottom" constant="30" id="LMI-MC-qAo"/>
+                <constraint firstItem="oRB-lQ-ZRX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MJZ-Qz-rNe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oRB-lQ-ZRX" secondAttribute="trailing" id="MaB-my-VJV"/>
+                <constraint firstItem="aw5-xc-XNq" firstAttribute="top" secondItem="4ci-MW-mzU" secondAttribute="bottom" constant="30" id="YdQ-W1-gpx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>

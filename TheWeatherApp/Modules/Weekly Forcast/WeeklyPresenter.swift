@@ -46,19 +46,19 @@ final class WeeklyPresenter: WeeklyViewOutput, WeeklyInteractorOutput {
             let item = weather.list[i]
             
             let dateAttributes: [NSAttributedStringKey: Any] = [
-                .foregroundColor : UIColor.black,
-                .strokeWidth : -1.0,
+                .foregroundColor : UIColor.lightGray,
                 .font : UIFont.boldSystemFont(ofSize: 14)
             ]
 
             let weatherAttributes: [NSAttributedStringKey: Any] = [
-                .foregroundColor : UIColor.blue,
+                .foregroundColor : UIColor.black,
                 .strokeWidth : -2.0,
                 .font : UIFont.boldSystemFont(ofSize: 20)
             ]
             
             let windAttributes: [NSAttributedStringKey: Any] = [
-                .foregroundColor : UIColor.gray,
+                .foregroundColor : UIColor.darkGray,
+                .strokeWidth : 0,
                 .font : UIFont.boldSystemFont(ofSize: 16)
             ]
             

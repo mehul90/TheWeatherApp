@@ -9,7 +9,7 @@
 import UIKit
 
 protocol UserProfileCoordinatorInput {
-    func updateStore(name: String, token: String)
+    func refreshLoginData()
 }
 
 final class UserProfileCoordinator: Coordinator<DeepLink> {
@@ -23,7 +23,7 @@ final class UserProfileCoordinator: Coordinator<DeepLink> {
         let presenter = UserProfilePresenter()
         presenter.view = controller
         presenter.coordinator = self
-        let interactor = UserProfileInteractor()
+        let interactor = UserProfileInteractor(store: store)
         interactor.output = presenter
         presenter.interactor = interactor
         controller.output = presenter
@@ -42,8 +42,8 @@ final class UserProfileCoordinator: Coordinator<DeepLink> {
 }
 
 extension UserProfileCoordinator: UserProfileCoordinatorInput {
-    func updateStore(name: String, token: String) {
-        self.store.token = token
-        //self.delegate?.userProfileUpdated()
+    
+    func refreshLoginData() {
+        viewController.refreshUserProfileData()
     }
 }

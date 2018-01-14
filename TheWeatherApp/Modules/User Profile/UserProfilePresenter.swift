@@ -11,6 +11,8 @@ import Foundation
 protocol UserProfileViewOutput {
     func viewDidLoad()
     func userTappedLoginAsGuest()
+    func needsUpdateUserProfileData()
+    func userTappedLogout()
 }
 
 protocol UserProfileInteractorOutput: class {
@@ -24,11 +26,23 @@ final class UserProfilePresenter: UserProfileViewOutput, UserProfileInteractorOu
     var coordinator: UserProfileCoordinatorInput!
     
     func viewDidLoad() {
-        //
+        needsUpdateUserProfileData()
     }
     
     func userTappedLoginAsGuest() {
-        view?.showAsLoggedIn(withUserName: "Guest")
-        coordinator.updateStore(name: "Guest", token: "1234")
+        interactor.userLoggedInAsGuest()
+        view?.showAsLoggedIn(withUserName: interactor.getUserName())
+    }
+    
+    func needsUpdateUserProfileData() {
+        if interactor.isUserLoggedIn() {
+            view?.showAsLoggedIn(withUserName: interactor.getUserName())
+        } else {
+            view?.allowUserToLogin()
+        }
+    }
+    
+    func userTappedLogout() {
+        interactor.userLoggedOut()
     }
 }
