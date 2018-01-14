@@ -21,8 +21,12 @@ final class LocationManager: NSObject {
         if let currentLocation = currentLocation {
             update(currentLocation)
         } else {
-            locationManager.startUpdatingLocation()
-            updateClosure = update
+            if CLLocationManager.authorizationStatus() != .denied {
+                locationManager.startUpdatingLocation()
+                updateClosure = update
+            } else {
+                update(kCLLocationCoordinate2DInvalid)
+            }
         }
     }
     
